@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>미션 3 발표자료 - 김선태 (직접 써보고 피드백 주고받기)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Malgun Gothic', sans-serif; background: #0b0f19; color: #f8fafc; height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+    .deck { flex: 1; display: flex; justify-content: center; align-items: center; padding: 30px; }
+    .slide { display: none; width: 100%; max-width: 1100px; height: 100%; max-height: 640px; background: #161e31; border: 1px solid #2a3655; border-radius: 18px; padding: 40px 50px; flex-direction: column; justify-content: space-between; }
+    .slide.active { display: flex; }
+    .tag { display: inline-block; background: rgba(59,130,246,0.15); color: #60a5fa; padding: 4px 12px; border-radius: 99px; font-size: 13px; font-weight: bold; margin-bottom: 12px; width: fit-content; }
+    h1 { font-size: 38px; margin-bottom: 16px; color: #fff; }
+    h2 { font-size: 26px; border-left: 5px solid #3b82f6; padding-left: 14px; margin-bottom: 18px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 18px; margin-bottom: 12px; }
+    .card.hl { border-color: #3b82f6; background: rgba(30,58,138,0.25); }
+    ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15.5px; color: #e2e8f0; }
+    ul li::before { content: "• "; color: #60a5fa; font-weight: bold; }
+    .bar { height: 50px; background: #090d16; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; font-size: 14px; color: #94a3b8; }
+    button { background: #1e293b; color: #fff; border: 1px solid #334155; padding: 5px 12px; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #3b82f6; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
+    th, td { border: 1px solid #334155; padding: 8px 10px; text-align: left; }
+    th { background: #1e293b; color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <div>
+        <span class="tag">Codyssey AI 네이티브 · 미션 3 발표 (5분)</span>
+        <h1>직접 써보고<br><span style="color:#60a5fa;">피드백 주고받기</span></h1>
+        <p style="font-size:18px; color:#cbd5e1; margin-top:14px;">민수 님의 영화 티어리스트를 직접 써보며 AI·동료 피드백을 검증하고 진짜 도움 되는 피드백 전하기</p>
+      </div>
+      <div class="card hl">
+        <ul>
+          <li><strong>발표자</strong>: 김선태 (굳초이스냉동공조)</li>
+          <li><strong>핵심 원칙</strong>: "그럴듯해 보여도 직접 해보기 전에는 믿지 않는다!"</li>
+          <li><strong>결과물</strong>: 받은_피드백.md, 미션3_기록.md, 피드백.md, 코랩세션질문지.md</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <div>
+        <span class="tag">01. 피드백 검증 기준</span>
+        <h2>반영, 보류, 되묻기의 명확한 3가지 기준</h2>
+        <div class="card">
+          <ul>
+            <li><strong>반영</strong>: 직접 해 보니 사실이고, 기획서의 원래 목적이나 약속에 맞는 것</li>
+            <li><strong>보류</strong>: 직접 해 보니 아니거나, 기획서의 조건과 부딪히거나, 개인 취향이라 꼭 바꿀 이유가 없는 것</li>
+            <li><strong>되묻기</strong>: 구체적으로 무엇을 말하는지 알 수 없어 객관적으로 확인할 수 없는 것</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card hl">
+        <strong style="color:#fde047; font-size:16px;">💡 가장 중요한 태도:</strong>
+        <p style="font-size:15px; margin-top:4px;">AI가 제안했다고 무조건 따르지 않고, 기획서가 정의한 '가벼운 단일 HTML 파일' 원칙을 지켰는지가 핵심입니다.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <div>
+        <span class="tag">02. 받은 피드백 6가지 검증 결과</span>
+        <h2>AI 의견 3개 & 동료 의견 3개 팩트체크</h2>
+        <table>
+          <thead><tr><th>구분</th><th>받은 내용</th><th>판정</th><th>이유</th></tr></thead>
+          <tbody>
+            <tr><td>AI 1</td><td>외부 TMDB 포스터 API 연동</td><td><strong>보류</strong></td><td>단일 파일 오프라인 구동이라는 기획서 조건 위배</td></tr>
+            <tr><td>AI 2</td><td>영화 입력 후 엔터(Enter) 미작동</td><td><strong style="color:#60a5fa;">반영</strong></td><td>직접 해보니 마우스로만 눌러야 해 불편함. 필수 개선점</td></tr>
+            <tr><td>AI 3</td><td>파이어베이스 로그인/DB 연동</td><td><strong>보류</strong></td><td>개인용 PC 저장 도구에 불필요한 과잉 기능</td></tr>
+            <tr><td>동료 1</td><td>다크 모드 테마로 변경</td><td><strong>보류</strong></td><td>기능상 문제없으며 개인의 디자인 취향 문제</td></tr>
+            <tr><td>동료 2</td><td>빈칸 입력 시 안내창(alert) 필요</td><td><strong style="color:#60a5fa;">반영</strong></td><td>공백 입력 시 무반응이라 고장으로 오해할 수 있음</td></tr>
+            <tr><td>동료 3</td><td>요즘 스타일로 화려하게 바꿔달라</td><td><strong style="color:#fde047;">되묻기</strong></td><td>구체적인 요구사항이 없어 확인 불가</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <div>
+        <span class="tag">03. 민수 님께 보낸 알짜 피드백 (피드백.md)</span>
+        <h2>'본 것 - 기준 - 제안' 구조로 전달하기</h2>
+        <div class="card">
+          <strong style="color:#10b981;">👏 잘된 점 먼저 인정하기</strong>
+          <p style="font-size:14.5px; margin-top:4px; color:#cbd5e1;">단일 HTML 파일로 가볍게 열리고, 드래그 앤 드롭 이동과 localStorage 저장이 완벽히 작동함</p>
+        </div>
+        <div class="card hl">
+          <strong style="color:#60a5fa;">🎯 내가 추가로 발견한 치명적인 문제 (제안 3)</strong>
+          <p style="font-size:14.5px; margin-top:4px; color:#fff;"><strong>[초기화]</strong> 버튼을 누르면 확인창(confirm) 없이 즉시 모든 데이터가 날아감! -> 실수 방지를 위한 안전 확인창 추가 제안</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <div>
+        <span class="tag">04. 배운 점 및 실무 적용</span>
+        <h2>동료 평가와 피드백의 진짜 의미</h2>
+        <div class="card">
+          <ul>
+            <li><strong>AI의 제안을 비판적으로 검토하기</strong>: AI는 '최신 기술(DB, API)'을 자랑하려 하지만, 고객과 사용자가 원하는 건 '기획 목적에 맞는 가벼움'이다.</li>
+            <li><strong>감정 없는 객관적 피드백</strong>: '본 것(사실) -> 기준(약속) -> 제안(해결책)'으로 말하면 누구나 납득한다.</li>
+            <li><strong>실무 적용</strong>: 우리 굳초이스냉동공조 거래처와 직원들에게 피드백을 주고받을 때도 이 원칙을 적용하겠다.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:18px; font-weight:bold; color:#60a5fa;">경청해 주셔서 감사합니다!</p>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div><strong>Codyssey 미션 3 발표</strong> | 김선태</div>
+    <div>
+      <button onclick="prev()">◀ 이전</button>
+      <span id="c" style="margin:0 10px; color:#fff;">1 / 5</span>
+      <button onclick="next()">다음 ▶</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let idx = 0;
+    function show() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      document.getElementById('c').textContent = `${idx + 1} / ${slides.length}`;
+    }
+    function next() { if (idx < slides.length - 1) { idx++; show(); } }
+    function prev() { if (idx > 0) { idx--; show(); } }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+  </script>
+</body>
+</html>
